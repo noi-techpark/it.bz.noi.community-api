@@ -1,6 +1,6 @@
 # it.bz.noi.community-api
 
-[![CI](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/ci.yml/badge.svg)](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/main.yml/badge.svg)](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/main.yml)
 
 This microservice acts as a proxy service over the Dynamics 365 API provided to NOI Technology by Würth Phoenix.
 
@@ -10,15 +10,17 @@ A test installation can be found here --> https://api.community.noi.testingmachi
 
 ## Table of contents
 
-- [Getting started](#Getting-started)
-  - [Prerequisites](#Prerequisistes)
-  - [Source code](#Source-code)
-  - [Environment variables](#Environment-variables)
-- [Development](#Development)
-  - [From the command line](#From-the-command-line)
-  - [With an IDE](#With-an-IDE)
-  - [Local testing](#Local-testing)
-- [Deployment](#Deployment)
+- [it.bz.noi.community-api](#itbznoicommunity-api)
+  - [Table of contents](#table-of-contents)
+  - [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Source code](#source-code)
+    - [Environment variables](#environment-variables)
+  - [Development](#development)
+    - [From the command line](#from-the-command-line)
+    - [With an IDE](#with-an-ide)
+  - [Deployment](#deployment)
+  - [API consumer documentation](#api-consumer-documentation)
 
 ## Getting started
 
