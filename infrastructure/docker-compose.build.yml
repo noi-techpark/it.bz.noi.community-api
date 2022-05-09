@@ -4,7 +4,7 @@ services:
   api:
     image: ${DOCKER_IMAGE:-it.bz.noi.community-api}:${DOCKER_TAG:-latest}
     build:
-      context: ../
+      context: .
       dockerfile: docker/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
