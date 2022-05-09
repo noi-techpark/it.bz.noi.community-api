@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  PROJECT_NAME: community-api
+  PROJECT_NAME: noi-community-api
   DOCKER_REGISTRY_HOST: ghcr.io
   DOCKER_IMAGE: ghcr.io/${{ github.repository }}/${{ env.PROJECT_NAME }}
   DOCKER_TAG: ${{ github.sha }}
@@ -17,13 +17,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Create .env file
         uses: noi-techpark/github-actions/env-file@v2
         env:
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
-
           X_SERVER_PORT: ${{ env.SERVER_PORT }}
 
       - name: Build image
