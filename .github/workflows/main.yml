@@ -9,7 +9,7 @@ env:
   DOCKER_REGISTRY_HOST: ghcr.io
   DOCKER_IMAGE: ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}-app
   DOCKER_TAG: ${{ github.sha }}
-  SERVER_PORT: 1244
+  SERVER_PORT: 1044
 
 jobs:
   test:
