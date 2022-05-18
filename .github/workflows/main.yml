@@ -88,7 +88,7 @@ jobs:
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: ${{ env.SERVER_PORT }}
-          X_ASPNETCORE_ENVIRONMENT: "Development"
+          X_ASPNETCORE_ENVIRONMENT: "Production"
           X_CLIENT_ID: ${{ secrets.CLIENT_ID_PROD }}
           X_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_PROD }}
           X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_PROD }}
