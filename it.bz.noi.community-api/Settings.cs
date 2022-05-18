@@ -8,19 +8,23 @@ namespace it.bz.noi.community_api
 {
     public class Settings
     {
-        private readonly Uri serviceUri;
+        private readonly string serviceUri;
         private readonly string clientId;
         private readonly string tenantId;
         private readonly string clientSecret;
         private readonly string[] scopes;
+        private readonly string authority;
+
+        private static Lazy<Settings> settingsInstance = new Lazy<Settings>(() => new Settings());
 
         private Settings()
         {
-            serviceUri = new Uri(GetEnv("SERVICE_URL"));
+            serviceUri = GetEnv("SERVICE_URL");
             clientId = GetEnv("CLIENT_ID")!;
             tenantId = GetEnv("TENANT_ID")!;
             clientSecret = GetEnv("CLIENT_SECRET")!;
             scopes = new[] { GetEnv("SERVICE_SCOPE")! };
+            authority = GetEnv("OPENID_AUTHORITY")!;
         }
 
         private static string GetEnv(string key)
@@ -28,7 +32,7 @@ namespace it.bz.noi.community_api
             return Environment.GetEnvironmentVariable(key) ?? throw new Exception($"Environment variable {key} not set.");
         }
 
-        public Uri ServiceUri => serviceUri;
+        public string ServiceUri => serviceUri;
 
         public string ClientId => clientId;
 
@@ -38,9 +42,11 @@ namespace it.bz.noi.community_api
 
         public string[] Scopes => scopes;
 
+        public string OpenIdAuthority => authority;
+
         public static Settings Initialize()
         {
-            return new Settings();
+            return settingsInstance.Value;
         }
     }
 }
