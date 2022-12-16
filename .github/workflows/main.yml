@@ -91,7 +91,7 @@ jobs:
           X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_PROD }}
           X_SERVICE_URL: ${{ secrets.SERVICE_URL_PROD }}
           X_TENANT_ID: ${{ secrets.TENANT_ID_PROD }}
-          X_OPENID_AUTHORITY: "https://auth.opendatahub.bz.it/auth/realms/noi/"
+          X_OPENID_AUTHORITY: "https://auth.opendatahub.com/auth/realms/noi/"
 
       - name: Build and push images
         uses: noi-techpark/github-actions/docker-build-and-push@v2
