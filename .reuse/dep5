@@ -3,6 +3,6 @@ Upstream-Name: it.bz.noi.community-api
 Upstream-Contact: NOI Techpark <digital@noi.bz.it>
 Source: https://github.com/noi-techpark/it.bz.noi.community-api
 
-Files: .github/* infrastructure/* .config/* .gitignore LICENSE .dockerignore .env.example docker-compose.dcproj docker-compose.dcproj.user it.bz.noi.community-api.sln it.bz.noi.community-api/it.bz.noi.community-api.csproj it.bz.noi.community-api/it.bz.noi.community-api.csproj.user it.bz.noi.community-api/.env.example it.bz.noi.community-api/Properties/*
+Files: .github/* infrastructure/* .config/* .gitignore .pre-commit-config.yaml LICENSE .dockerignore .env.example docker-compose.dcproj docker-compose.dcproj.user it.bz.noi.community-api.sln it.bz.noi.community-api/it.bz.noi.community-api.csproj it.bz.noi.community-api/it.bz.noi.community-api.csproj.user it.bz.noi.community-api/.env.example it.bz.noi.community-api/Properties/*
 Copyright: (c) NOI Techpark <digital@noi.bz.it>
 License: CC0-1.0
