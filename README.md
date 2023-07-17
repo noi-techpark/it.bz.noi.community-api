@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # it.bz.noi.community-api
 
-![REUSE Compliance](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/reuse.yml/badge.svg)
+[![REUSE Compliance](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/reuse.yml/badge.svg)](https://github.com/noi-techpark/odh-docs/wiki/REUSE#badges)
 [![CI/CD](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/main.yml/badge.svg)](https://github.com/noi-techpark/it.bz.noi.community-api/actions/workflows/main.yml)
 
 This microservice acts as a proxy service over the Dynamics 365 API provided to NOI Technology by Würth Phoenix.
