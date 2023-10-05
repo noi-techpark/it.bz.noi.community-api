@@ -119,3 +119,4 @@ Then install the pre-commit hook via the config file by running:
 ```bash
 pre-commit install
 ```
+
