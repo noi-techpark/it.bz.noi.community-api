@@ -16,22 +16,22 @@ pipeline {
 	SIAG_USER = credentials('odh-tourism-api-test-siag-user')
 	SIAG_PSWD = credentials('odh-tourism-api-test-siag-pswd')
 	XMLDIR = credentials('odh-tourism-api-test-xmldir')
-	IMG_URL = "https://tourism.images.opendatahub.bz.it/api/Image/GetImage?imageurl="
-	DOC_URL = "https://tourism.images.opendatahub.bz.it/api/File/GetFile/"
+	IMG_URL = "https://tourism.images.opendatahub.com/api/Image/GetImage?imageurl="
+	DOC_URL = "https://tourism.images.opendatahub.com/api/File/GetFile/"
 	S3_BUCKET_ACCESSPOINT = credentials('odh-tourism-api-test-bucket-accesspoint')
 	S3_IMAGEUPLOADER_ACCESSKEY = credentials('odh-tourism-api-test-s3-imageuploader-accesskey')
 	S3_IMAGEUPLOADER_SECRETKEY = credentials('odh-tourism-api-test-s3-imageuploader-secretkey')
-	OAUTH_AUTORITY = "https://auth.opendatahub.bz.it/auth/realms/noi/"
+	OAUTH_AUTORITY = "https://auth.opendatahub.com/auth/realms/noi/"
 	ELK_URL = credentials('odh-tourism-api-test-elk-url')
 	ELK_TOKEN = credentials('odh-tourism-api-test-elk-token')
 	JSONPATH = "./wwwroot/json/"
 	EBMS_USER = credentials('odh-tourism-api-test-ebms-user')
 	EBMS_PASS = credentials('odh-tourism-api-test-ebms-pass')
-	DATABROWSER_URL = "https://databrowser.opendatahub.bz.it/"
+	DATABROWSER_URL = "https://databrowser.opendatahub.com/"
         RAVEN_SERVICEURL = "https://service.suedtirol.info/api/"
 	RAVEN_USER = credentials('odh-raven-api-user')
 	RAVEN_PSWD = credentials('odh-raven-api-pswd')
-	API_URL = "https://tourism.api.opendatahub.bz.it/v1/"
+	API_URL = "https://tourism.api.opendatahub.com/v1/"
     }
 
     stages {

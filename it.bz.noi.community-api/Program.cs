@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Net.Http.Headers;
 using it.bz.noi.community_api;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
