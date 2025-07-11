@@ -33,7 +33,7 @@ jobs:
         uses: noi-techpark/github-actions/docker-build@v2
 
   deploy-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/main'
     needs: test
     concurrency: deploy-test
