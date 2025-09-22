@@ -97,7 +97,7 @@ jobs:
           X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_TEST }}
           X_SERVICE_URL: ${{ secrets.SERVICE_URL_TEST }}
           X_TENANT_ID: ${{ secrets.TENANT_ID_TEST }}
-          X_OPENID_AUTHORITY: "https://auth.noi.testingmachine.eu/auth/realms/noi-community/"
+          X_OPENID_AUTHORITY: "https://auth.opendatahub.testingmachine.eu/auth/realms/noi-community/"
 
       - name: Build and push images
         uses: noi-techpark/github-actions/docker-build-and-push@v2
@@ -155,3 +155,45 @@ jobs:
           docker-password: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           project-name: ${{ env.PROJECT_NAME }}
 
+  deploy-prod-v2:
+    runs-on: ubuntu-22.04
+    if: startsWith(github.ref, 'refs/tags/prodv2')
+    needs: test
+    concurrency: deploy-prod-v2
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Create .env file
+        uses: noi-techpark/github-actions/env-file@v2
+        with:
+          working-directory: ${{ env.WORKING_DIRECTORY }}
+        env:
+          X_COMPOSE_PROJECT_NAME: ${{ env.PROJECT_NAME_V2 }}
+          X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
+          X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
+          X_SERVER_PORT: ${{ env.SERVER_PORT_V2 }}
+          X_ASPNETCORE_ENVIRONMENT: "Production"
+          X_CLIENT_ID: ${{ secrets.CLIENT_ID_TEST }}
+          X_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_TEST }}
+          X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_TEST }}
+          X_SERVICE_URL: ${{ secrets.SERVICE_URL_TEST }}
+          X_TENANT_ID: ${{ secrets.TENANT_ID_TEST }}
+          X_OPENID_AUTHORITY: "https://auth.opendatahub.com/auth/realms/noi-community/"
+
+      - name: Build and push images
+        uses: noi-techpark/github-actions/docker-build-and-push@v2
+        with:
+          docker-username: ${{ github.actor }}
+          docker-password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy application
+        uses: noi-techpark/github-actions/docker-deploy@v2
+        with:
+          hosts: 'test'
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          docker-username: 'noi-techpark-bot'
+          docker-password: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          project-name: ${{ env.PROJECT_NAME_V2 }}
+
+  
