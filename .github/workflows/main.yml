@@ -10,8 +10,7 @@ env:
   DOCKER_TAG: ${{ github.sha }}
   SERVER_PORT: 1044
   PROJECT_NAME_V2: noi-community-api-v2  
-  SERVER_PORT_V2: 1045
-  SERVER_PORT_PROD_V2: 1046
+  SERVER_PORT_V2: 1046  
 
 jobs:
   test:
@@ -173,7 +172,7 @@ jobs:
           X_COMPOSE_PROJECT_NAME: ${{ env.PROJECT_NAME_V2 }}
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
-          X_SERVER_PORT: ${{ env.SERVER_PORT_PROD_V2 }}
+          X_SERVER_PORT: ${{ env.SERVER_PORT_V2 }}
           X_ASPNETCORE_ENVIRONMENT: "Production"
           X_CLIENT_ID: ${{ secrets.CLIENT_ID_PROD }}
           X_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_PROD }}
