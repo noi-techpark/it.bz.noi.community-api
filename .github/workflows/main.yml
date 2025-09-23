@@ -175,11 +175,11 @@ jobs:
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: ${{ env.SERVER_PORT_PROD_V2 }}
           X_ASPNETCORE_ENVIRONMENT: "Production"
-          X_CLIENT_ID: ${{ secrets.CLIENT_ID_TEST }}
-          X_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_TEST }}
-          X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_TEST }}
-          X_SERVICE_URL: ${{ secrets.SERVICE_URL_TEST }}
-          X_TENANT_ID: ${{ secrets.TENANT_ID_TEST }}
+          X_CLIENT_ID: ${{ secrets.CLIENT_ID_PROD }}
+          X_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_PROD }}
+          X_SERVICE_SCOPE: ${{ secrets.SERVICE_SCOPE_PROD }}
+          X_SERVICE_URL: ${{ secrets.SERVICE_URL_PROD }}
+          X_TENANT_ID: ${{ secrets.TENANT_ID_PROD }}
           X_OPENID_AUTHORITY: "https://auth.opendatahub.com/auth/realms/noi-community/"
 
       - name: Build and push images
